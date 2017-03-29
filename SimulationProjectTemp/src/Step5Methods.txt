@@ -1,0 +1,70 @@
+ void CheckZero()
+      {
+          if (this.cpu.A == 0)
+          {
+              this.cpu.Z = 1;
+          }
+          else
+          {
+              this.cpu.Z = 0;
+          }
+      }
+ void CheckNegative()
+      {
+          if ((this.cpu.A & 0x00008000) == 0x00008000)
+          {
+              this.cpu.N = 1;
+          }
+      }
+ void ADDA()
+      {
+          this.cpu.A += this.cpu.OP;
+          CheckNegative();
+          CheckZero();
+          
+      }
+ void ADDX()
+      {
+          this.cpu.X += this.cpu.OP;
+          CheckNegative();
+          CheckZero();
+      }
+ void SUBA()
+      {
+          this.cpu.A -= this.cpu.OP;
+          CheckNegative();
+          CheckZero();
+      }
+ void SUBX()
+      {
+          this.cpu.X -= this.cpu.OP;
+          CheckNegative();
+          CheckZero();
+      }
+ void STA()
+      {
+          this.DATA = this.cpu.OP;
+          WriteMem();
+      }
+ void STX()
+      {
+
+      }
+ void LDA()
+      {
+
+      }
+ void LDX()
+      {
+
+      }
+ void CPA()
+      {
+          CheckNegative();
+          CheckZero();
+      }
+ void CPX()
+      {
+          CheckNegative();
+          CheckZero();
+      }

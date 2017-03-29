@@ -1,0 +1,33 @@
+// SHELL for MC2-ST---Implement the 'ST' instructions
+//
+// We assume the the Operand's Effective Address has been calculated and the value has been stored in the T2 reg
+// STA
+//the next line allows us to initialize regs and memory
+UnitPre:  A=0x1234,  T2=0x001C, Mem[0x001C]=0x0000
+//the next line allows us to specify/verify the expected values after execution
+UnitPost: A=0x1234,  T2=0x001D, Mem[0x001C]=0x1234
+// MAR <- T2.
+1. 
+// MBR <- A<high>.
+2. 
+// Initiate memory write.
+3. 
+// Complete memory write.
+4. 
+//
+// increment the memaddr in T2
+// T2(13) <- T2(13) + 1, low-order byte first.
+5. 
+// T2(12) <- T2(12)+ 0, high-order byte last.
+6. 
+//
+// MAR <- T2.
+7. 
+// MBR <- A<low>.
+8. 
+// Initiate memory write.
+9. 
+// Complete memory write.
+10. 
+//
+// // ...DONE, the data has been stored from the A reg....

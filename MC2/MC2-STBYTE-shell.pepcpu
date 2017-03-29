@@ -1,0 +1,19 @@
+// SHELL for MC2-STBYTE---Implement the 'STBYTE' instructions
+//
+// We assume the the Operand's Effective Address has been calculated and stored in the T2 reg
+// STBYTEA
+//the next line allows us to initialize regs and memory
+UnitPre:  A=0x1234, T2=0x0012,  Mem[0x0012]=0x00, Mem[0x0012]=0x00
+//the next line allows us to specify/verify the expected values after execution
+UnitPost: A=0x1234, T2=0x0012,  Mem[0x0012]=0x34, Mem[0x0012]=0x34
+// MAR <- T2.
+1. 
+// MBR <- A<low>.
+2. 
+// Initiate memory write.
+3. 
+// Complete memory write.
+4. 
+//
+// ...DONE, the data has been stored from the A(LOW) reg....
+
